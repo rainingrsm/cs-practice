@@ -2,6 +2,7 @@ limit = int(input())
 n = int(input())
 erk, pk, maxz, sm = 0, 0, 0, 0
 
+#input обработка
 for _ in range(n):
     pz = input()
     if isintance(str, pz):
