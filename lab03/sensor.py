@@ -1,6 +1,6 @@
 limit = float(input())
 n = int(input())
-erk, pk, maxz, sm = 0, 0, 0, 0
+erk, pk, maxz, sm = 0, 0, float('-inf'), 0
 
 #input обработка
 for _ in range(n):
