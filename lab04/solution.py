@@ -14,7 +14,7 @@ def ranking(names: list[str], scores: list[float]) -> list[str]:
     res = {}
     for x, y in zip(names, scores):
         res[x] = y
-    print(sorted(res, reverse=True))
+    return sorted(res, reverse=True)
 
 def above_average(names: list[str], scores: list[float]) -> list[str]:
     return [x for x, y in zip(names, scores) if y > av]
@@ -23,8 +23,3 @@ def above_average(names: list[str], scores: list[float]) -> list[str]:
 
 names =  ["Аня", "Боря", "Вика"]
 scores = [7.0, 9.0,  9.0]
-
-wnr = winner(names, scores)
-av = average(scores)
-above_av = above_average(names, scores)
-print(ranking(names, scores))
