@@ -1,6 +1,6 @@
 def winner(names: list[str], scores: list[float]) -> str:
     res: str = ''
-    maxv: float = 0
+    maxv: float = float("-inf")
     for n, s in zip(names, scores):
         if s > maxv:
             res = n
@@ -11,15 +11,10 @@ def average(scores: list[float]) -> float:
     return float(f'{sum(scores)/len(scores):.2f}') if scores else 0.0
 
 def ranking(names: list[str], scores: list[float]) -> list[str]:
-    res = {}
-    for x, y in zip(names, scores):
-        res[x] = y
-    return sorted(res, reverse=True)
+    si = sorted(range(len(scores)), key=lambda i: -scores[i])
+    
+    return [names[i] for i in si]    
 
 def above_average(names: list[str], scores: list[float]) -> list[str]:
+    av = average(scores)
     return [x for x, y in zip(names, scores) if y > av]
-
-
-
-names =  ["Аня", "Боря", "Вика"]
-scores = [7.0, 9.0,  9.0]
