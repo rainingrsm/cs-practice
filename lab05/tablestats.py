@@ -33,7 +33,7 @@ def total_minutes(rows: list[dict], kind: str) -> float:
     for row in rows:
         if row.get('тип', None) != kind:
             continue
-        t += float(row.get('минуты', 0))
+        t += float(row.get('минуты', 0).replace(',', '.'))
     return round(t, 1)
 
 
