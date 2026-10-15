@@ -1,6 +1,6 @@
 def read_rows(lines: list[str]) -> list[dict]:
     rows = []
-    header = [value.strip() for value in lines.readline().split(",")]
+    header = []
 
     for line in lines:
         line = line.strip()
@@ -8,6 +8,10 @@ def read_rows(lines: list[str]) -> list[dict]:
             continue
 
         f = [value.strip() for value in line.split(",")]
+
+        if not header:
+            header = f
+            continue
         if len(f) != len(header):
             continue
 
