@@ -34,9 +34,10 @@ def total_minutes(rows: list[dict], kind: str) -> float:
         if row["тип"] != kind:
             continue
         try:
-            t += float(row["минуты"])
+            minutes = float(row["минуты"])
         except ValueError:
-            pass
+            continue
+        t += minutes
     return round(t, 1)
 
 
