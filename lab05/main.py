@@ -4,6 +4,7 @@ from tablestats import *
 def main():
     with open(input(), encoding="utf-8") as table:
         rows = read_rows(table)
+        
     counts = count_types(rows)
     print(len(rows))
     print(len(counts))
